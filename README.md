@@ -55,7 +55,6 @@ hình từ một video.
             <li><h5><a class="nav-item nav-link" href="{{ url_for('index') }}">RTSP links</a></h5></li>
             <li><h5><a class="nav-item nav-link" href="{{ url_for('display') }}">App</a></h5></li>
         </ol>
-
         <h4>3. Triển khai</h4>
         <ol>
             <li>Kết nối Camera</li>
