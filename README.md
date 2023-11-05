@@ -22,7 +22,7 @@ hình từ một video.
         <br>
 
         
-    <h4>1. Huấn luyện Model nhận diện khuôn mặt </h4>
+    <h1>1. Huấn luyện Model nhận diện khuôn mặt </h1>
         <p>Bao gồm 4 bước:
         </p> 
         <ol>
