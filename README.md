@@ -21,7 +21,8 @@ hình từ một video.
             </p>
         <br>
 
-        <h4>1. Huấn luyện Model nhận diện khuôn mặt </h4>
+        
+    <h4>1. Huấn luyện Model nhận diện khuôn mặt </h4>
         <p>Bao gồm 4 bước:
         </p> 
         <ol>
@@ -63,4 +64,3 @@ hình từ một video.
             <li>Deploy Web App </li>
             <li>Routing for Internet Connection </li>
         </ol> 
-</div>
