@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<div class="container">
+    <br><br>
+    <h1 > RTSP Links </h1>
+    <ol>
+    {% for rtsp_link in rtsp_links %}
+        <li>{{ rtsp_link.Link }}
+        <form action="/delete_link" method="post">
+            <input type="hidden" name="link" value="{{ rtsp_link.Link }}">
+            <button type="submit">Delete</button>
+        </form>
+        <form action="/modify_link" method="post">
+            <input type="hidden" name="old_link" value="{{ rtsp_link.Link }}">
+            <input type="text" name="new_link" placeholder="Modified RTSP link" required>
+            <button type="submit">Modify</button>
+        </form>
+        </li>
+    {% endfor %}
+    </ol>
+    <form action="/add_link" method="post">
+        <input type="text" name="link" placeholder="New RTSP link" required>
+        <button type="submit">Add Link</button>
+    </form>
+{% endblock %}

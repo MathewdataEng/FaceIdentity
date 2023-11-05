@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+
+<div >
+  <div class="col-8"></div>
+    <h3>Detection in RealTime</h3>
+    <br>
+      <form action="{{ url_for('video_feed') }}" method="GET" enctype="multipart/form-data">
+        <label for="video">Choose a RTSP link:</label>
+        <select name="rtsp_link" id="rtsp-link-selector">
+          {% for rtsp_link in rtsp_links %}
+            <option value="{{ rtsp_link }}">{{ rtsp_link }}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Watch" class="btn btn-outline-primary">
+      </form>
+      <br>
+      <p>
+      <img src="{{ url_for('video_feed', rtsp_link=request.args.get('rtsp_link', ''))  }}" class="image-fluid" width="360" alt="">
+      </p>
+  </div>
+
+</div>
+
+{% endblock %}

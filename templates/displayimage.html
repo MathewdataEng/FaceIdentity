@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<!-- 12 -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br><br>
+            <!-- form : upload the image -->
+            <h3 class="display-8" >View Image from ID</h3>
+            <!-- upload image form -->
+            <form action="{{ url_for('displayimage') }}" method="GET" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="id_number">Enter an ID Number:</label>
+                    <input type="number" class="id_number" name="id_number" required value="{{ id_number }}">
+                    <input type="submit" value="Display" class="btn btn-outline-primary">
+
+                </div>
+            </form>
+
+        </div>
+        <div class="col-8">
+            <!-- report: prediction image, reporting (grayscale, eigen image and probability score) -->
+            {% if fileupload %}
+            <br><br>
+            <!-- predicted image -->
+            <h3 class="display-8"> Predicted Image</h3>
+            <img src=".\static\predict\image.jpg" class="image-fluid" width="500" alt="">
+            <!-- reporting -->
+            <hr>
+            <br>
+            <table class="table table-hover table-striped">
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Face</th>
+                    <th>Name</th>
+                    <th>Score ID</th>
+                    <th>Emotion</th>
+                    <th>Score Emotion</th>
+                </tr>
+                {% for element in report %}
+                    <tr>
+                        <td>{{ element[0] }}</td>
+                        <td>
+                            <img src="{{ element[1] }}" class="image-fluid" height="100" alt="">
+                        </td>
+                        <td>{{ element[2] }}</td>
+                        <td>{{ element[3] }}</td>
+                        <td>{{ element[4] }}</td>
+                        <td>{{ element[5] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<!-- 12 -->
+<h1>Emotion Detected</h1>
+<form method="POST">
+    <label for="date">Enter a Date:</label>
+    <input type="date" id="date" name="date" required>
+    <input type="submit" value="Submit" class="btn btn-outline-primary">
+</form>
+{% if data %}
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Timestamp</th>
+                <th>Prediction Name</th>
+                <th>Confidence ID</th>
+                <th>Prediction Emotion</th>
+                <th>Confidence Emotion</th>
+                <!-- add more columns here as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                {% for value in row %}
+                {% if loop.index == 1 %}
+                <td><a class="nav-item nav-link" href="{{ url_for('displayimage', id_number=value) }}">{{ value }}</a></td>
+                {% else %}
+                <td>{{ value }}</td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+{% endblock %}
+
+
