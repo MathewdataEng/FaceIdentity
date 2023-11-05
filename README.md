@@ -20,8 +20,6 @@ hình từ một video.
                 ảnh đã cắt sẽ là đầu vào của mô hình nhận diện. Kết quả sẽ là việc gán nhãn tên và cảm xúc của khuôn mặt.
             </p>
         <br>
-
-        
     <h1>1. Huấn luyện Model nhận diện khuôn mặt </h1>
         <p>Bao gồm 4 bước:
         </p> 
